@@ -22,9 +22,9 @@ window.addEventListener("load", function() {
     }) 
 
 
-   let list = this.document.getElementById("faultyItems");
+   let list = document.getElementById("faultyItems");
    list.style.visibility = "hidden"; 
-   let form = this.document.querySelector("form");
+   let form = document.querySelector("form");
    form.addEventListener("submit", (event) => {
     event.preventDefault(); 
     let pilotInput = document.querySelector("input[name = pilotName]");

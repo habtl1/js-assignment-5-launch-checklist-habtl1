@@ -24,7 +24,7 @@ function validateInput(testInput) {
         if (isNaN(testInput)) {
      return "Not a Number";
         }
-       if (testInput === Number) {
+       if (!isNaN(testInput)) {
             return "Is a Number";
     }
 }
@@ -43,23 +43,23 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
     copilotStatus.innerHTML = `Copilot ${copilot}`;
     if (fuelLevel < 10000 && cargoLevel <= 10000) {
-        fuelLevelStatus.innerHTML = "Not enough fuel for takeoff";
-        cargoLevelStatus.innerHTML = "Enough mass for Takeoff";
+        fuelStatus.innerHTML = "Not enough fuel for takeoff";
+        cargoStatus.innerHTML = "Enough mass for Takeoff";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "red"
     }else if (fuelLevel >= 10000 && cargoLevel > 10000) {
-        fuelLevelStatus.innerHTML = "Enough fuel for takeoff";
-        cargoLevelStatus.innerHTML = "Too much mass fot takeoff";
+        fuelStatus.innerHTML = "Enough fuel for takeoff";
+        cargoStatus.innerHTML = "Too much mass fot takeoff";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color ="red"
     }else if (fuelLevel < 10000 && cargoLevel > 10000) {
-        fuelLevelStatus.innerHTML = "Not enough fuel for tak off";
-        cargoLevelStatus.innerHTML = "Too much mass fot takeoff";
+        fuelStatus.innerHTML = "Not enough fuel for tak off";
+        cargoStatus.innerHTML = "Too much mass fot takeoff";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "red"
     }else{
-        fuelLevelStatus.innerHTML = "Enough fuel for takeoff";
-        cargoLevelStatus.innerHTML  = "Enough mass for takeoff";
+        fuelStatus.innerHTML = "Enough fuel for takeoff";
+        cargoStatus.innerHTML  = "Enough mass for takeoff";
         launchStatus.innerHTML = "Shuttle ready for launch";
         launchStatus.style.color = "green"
     }
